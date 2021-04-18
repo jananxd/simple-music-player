@@ -1,12 +1,27 @@
 import React from "react";
-import { Text } from "react-native";
+import { View } from "react-native";
+import { ListItem } from "react-native-elements";
 
 const Library: React.FC<{}> = () => {
+    const playlist = [
+        {name: 'Test'},
+        {name: 'Another Test'},
+    ];
 
     return (
-        <Text>
-            Library
-        </Text>
+        <View>
+            {playlist.map((music, index) => {
+                return (
+                    <ListItem key={index}>
+
+                        <ListItem.Content>
+                            <ListItem.Title>{music.name}</ListItem.Title>
+                        </ListItem.Content>
+                    </ListItem>
+                );
+            })}
+
+        </View>
     );
 }
 
